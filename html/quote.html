@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request | SparkDev</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <style>
+        :root {
+            /* Primary colors */
+            --primary-dark: #1e5b94; /* Dark blue from left side */
+            --primary-mid: #2d88c3; /* Mid-blue */
+            --primary-light: #4bb8d5; /* Light blue/teal from right side */
+            
+            /* Lightning bolt accent */
+            --accent: #50c0e6; /* Bright blue from the lightning bolt */
+            
+            /* Text and background */
+            --text-light: #ffffff; /* White text like in "SPARKDEV" */
+            --text-muted: #e6e6e6; /* Light gray for secondary text */
+            --background: #f8f9fa; /* Light background to complement the blues */
+            
+            /* Additional complementary colors */
+            --secondary: #e6f4f9; /* Very light blue for backgrounds */
+            --dark: #0c3b64; /* Very dark blue for emphasis */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-light);
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 30%;
+            height: 3px;
+            background-color: var(--primary-dark);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-bolt {
+            color: var(--accent);
+            margin: 0 5px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: var(--primary-dark);
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary-mid);
+            box-shadow: 0 0 0 3px rgba(45, 136, 195, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .col-half {
+            flex: 0 0 50%;
+            padding: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .col-half {
+                flex: 0 0 100%;
+            }
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            color: var(--text-light);
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, var(--primary-mid), var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 136, 195, 0.4);
+        }
+
+        .success-message,
+        .error-message {
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .success-message {
+            background-color: rgba(75, 184, 213, 0.2);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-light);
+        }
+
+        .error-message {
+            background-color: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid #f5c6cb;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--text-light);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Spark<span class="logo-bolt">⚡</span>Dev</div>
+            <h1>Request a Quote</h1>
+        </div>
+
+        <form id="quote-form">
+            <div class="row">
+                <div class="col-half">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                </div>
+                <div class="col-half">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your contact number">
+            </div>
+
+            <div class="form-group">
+                <label for="project_type">Project Type</label>
+                <select id="project_type" name="project_type" required>
+                    <option value="" disabled selected>Select project type</option>
+                    <option value="website">Website Development</option>
+                    <option value="app">Mobile App</option>
+                    <option value="ecommerce">E-commerce Solution</option>
+                    <option value="branding">Branding & Design</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+           
+
+            <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" placeholder="Please describe your project, goals, and any specific requirements" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">
+                    <span id="submit-text">Send Quote Request</span>
+                    <span id="spinner" class="spinner"></span>
+                </button>
+            </div>
+
+            <div class="success-message" id="success-message">
+                Your quote request has been sent successfully! We'll get back to you within 24 hours.
+            </div>
+            <div class="error-message" id="error-message">
+                Sorry, we couldn't send your request. Please try again or contact us directly.
+            </div>
+        </form>
+
+        <div class="footer">
+            &copy; 2025 SparkDev. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Initialize EmailJS
+            emailjs.init("prSp78quzRbjZbSxt");
+            
+            // Get elements
+            const form = document.getElementById('quote-form');
+            const submitText = document.getElementById('submit-text');
+            const spinner = document.getElementById('spinner');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Form submission handler
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Hide any existing messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Show loading state
+                submitText.style.display = 'none';
+                spinner.style.display = 'block';
+                
+                // Get form data
+                const formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    phone: this.phone.value,
+                    project_type: this.project_type.value,
+                    message: this.message.value
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_etlkh6n', 'template_y9vm4y4', formData)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        
+                        // Reset form
+                        form.reset();
+                        
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        
+                        // Reset button
+                        submitText.style.display = 'block';
+                        spinner.style.display = 'none';
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        
+                        // Show error message
+                        errorMessage.style.display = 'block';
+                        errorMessage.textContent = 'Failed to send quote request. Error: ' + error.text;
+                        
+                        // Reset button
+                        submitText.style.display = 'block';
+                        spinner.style.display = 'none';
+                    });
+            });
+        })();
+    </script>
+</body>
+</html>

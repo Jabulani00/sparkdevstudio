@@ -30,7 +30,7 @@ body {
     margin-bottom: 1rem;
 }
 .header,tagline {
-    color: white;
+    color: var(--primary-dark);
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 2rem;
