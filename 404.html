@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | SparkDev</title>
+    <style>
+        :root {
+            /* Primary colors */
+            --primary-dark: #1e5b94; /* Dark blue from left side */
+            --primary-mid: #2d88c3; /* Mid-blue */
+            --primary-light: #4bb8d5; /* Light blue/teal from right side */
+            
+            /* Lightning bolt accent */
+            --accent: #50c0e6; /* Bright blue from the lightning bolt */
+            
+            /* Text and background */
+            --text-light: #ffffff; /* White text like in "SPARKDEV" */
+            --text-muted: #e6e6e6; /* Light gray for secondary text */
+            --background: #f8f9fa; /* Light background to complement the blues */
+            
+            /* Additional complementary colors */
+            --secondary: #e6f4f9; /* Very light blue for backgrounds */
+            --dark: #0c3b64; /* Very dark blue for emphasis */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 50%, var(--primary-light) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+            z-index: -1;
+            opacity: 0.97;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 50px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-dark), var(--primary-light));
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .error-code .lightning {
+            position: absolute;
+            font-size: 150px;
+            top: -15px;
+            right: -15px;
+            transform: rotate(20deg);
+            color: var(--accent);
+            text-shadow: 0 0 10px rgba(80, 192, 230, 0.7);
+            animation: flash 5s infinite;
+        }
+
+        @keyframes flash {
+            0%, 91%, 93%, 95%, 100% {
+                opacity: 1;
+            }
+            92%, 94% {
+                opacity: 0.3;
+            }
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-mid), var(--primary-light));
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(45, 136, 195, 0.3);
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 136, 195, 0.4);
+        }
+
+        .btn.outline {
+            background: transparent;
+            border: 2px solid var(--primary-mid);
+            color: var(--primary-mid);
+        }
+
+        .btn.outline:hover {
+            background: var(--primary-mid);
+            color: var(--text-light);
+        }
+
+        .spark-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .spark-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(45, 136, 195, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spark-circle::after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            top: -30%;
+            left: -10%;
+        }
+
+        /* Lost in space elements */
+        .space-scene {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .floating-element {
+            position: absolute;
+            z-index: -1;
+        }
+
+        .floating-bolt {
+            color: var(--accent);
+            font-size: 40px;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        .floating-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(var(--primary-light), transparent);
+            opacity: 0.4;
+            animation: float 10s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(-50px) rotate(360deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 90px;
+            }
+            
+            .error-code .lightning {
+                font-size: 110px;
+                top: -10px;
+                right: -10px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 70px;
+            }
+            
+            .error-code .lightning {
+                font-size: 90px;
+                top: -8px;
+                right: -8px;
+            }
+            
+            .spark-icon {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    
+    <div class="space-scene" id="space-scene">
+        <!-- Stars and floating elements will be generated by JS -->
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="spark-icon">
+                <div class="spark-circle">
+                    <span style="color: white; font-size: 40px; font-weight: bold;">⚡</span>
+                </div>
+            </div>
+            
+            <div class="error-code">
+                404
+                <span class="lightning">⚡</span>
+            </div>
+            
+            <h1>Page Not Found</h1>
+            
+            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track!</p>
+            
+            <div class="buttons">
+                <a href="#" class="btn" onclick="window.history.back(); return false;">Go Back</a>
+                <a href="/" class="btn outline">Return Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create stars in the background
+        const spaceScene = document.getElementById('space-scene');
+        
+        // Generate random stars
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random positioning
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            
+            // Random size (small)
+            const size = Math.random() * 3 + 1;
+            
+            // Apply styles
+            star.style.top = `${top}%`;
+            star.style.left = `${left}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Random animation delay
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            
+            spaceScene.appendChild(star);
+        }
+        
+        // Add floating elements
+        const floatingElements = [
+            { type: 'bolt', count: 5 },
+            { type: 'circle', count: 8 }
+        ];
+        
+        floatingElements.forEach(element => {
+            for (let i = 0; i < element.count; i++) {
+                const el = document.createElement('div');
+                el.classList.add('floating-element');
+                
+                if (element.type === 'bolt') {
+                    el.classList.add('floating-bolt');
+                    el.innerHTML = '⚡';
+                } else if (element.type === 'circle') {
+                    el.classList.add('floating-circle');
+                }
+                
+                // Random positioning
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                
+                // Apply styles
+                el.style.top = `${top}%`;
+                el.style.left = `${left}%`;
+                
+                // Random animation delay
+                el.style.animationDelay = `${Math.random() * 5}s`;
+                el.style.animationDuration = `${5 + Math.random() * 10}s`;
+                
+                spaceScene.appendChild(el);
+            }
+        });
+    </script>
+</body>
+</html>
