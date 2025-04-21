@@ -80,210 +80,315 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+
     <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
       <!-- Navbar will be loaded here -->
-      <div id="navbar-container"></div>
-    <div class="container">
-        <div class="header">
-            <img src="../assets/spark/sparkdevlcon.png" alt="SparkDev Studio Logo" class="logo">
-            <h1>About SparkDev Studio</h1>
-            <p class="tagline">Igniting Innovation, Crafting the Future.</p>
-        </div>
-
-        <div class="company-overview">
-            <h2>Company Overview</h2>
-            <p>SparkDev Studio is a South African startup specializing in innovative IT solutions. Our focus is on delivering high-quality services in SaaS development, software development, web development/design, and website maintenance. As a forward-thinking company, our goal is to create and offer our own SaaS products, making cutting-edge technology accessible and affordable for businesses of all sizes.</p>
-            <p>We leverage modern technologies such as WordPress, Firebase, Google Cloud, MongoDB, Angular, Ionic, React/React Native, PostgreSQL, and Android to deliver solutions tailored to our clients' needs.</p>
-        </div>
-
-        <div class="mission-vision">
-            <div class="mission">
-                <h2>Our Mission</h2>
-                <p>To empower businesses and individuals by delivering innovative, scalable, and user-centric software solutions that simplify technology and drive growth.</p>
-            </div>
-
-            <div class="vision">
-                <h2>Our Vision</h2>
-                <p>To become a global leader in SaaS innovation, recognized for our creativity, reliability, and dedication to turning ideas into reality.</p>
-            </div>
-        </div>
-
-        <div class="values-section">
-            <h2>Core Values</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <i class="fas fa-lightbulb fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Innovation</h3>
-                    <p>We strive to bring fresh ideas to life, leveraging technology to solve real-world problems.</p>
+    <div id="navbar-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Igniting Innovation, Crafting the Future</h1>
+                    <p class="lead">SparkDev Studio is a South African startup specializing in innovative IT solutions, delivering high-quality services in SaaS development, software development, web development/design, and website maintenance.</p>
+                    <div class="hero-buttons">
+                        <a href="html/services.html" class="btn btn-primary">Our Services</a>
+                        <a href="html/contact.html" class="btn btn-outline-light">Get in Touch</a>
+                    </div>
                 </div>
-                <div class="value-item">
-                    <i class="fas fa-star fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Quality</h3>
-                    <p>We are committed to delivering exceptional services and products that exceed expectations.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-users fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Customer-Centricity</h3>
-                    <p>Our clients are at the heart of everything we do, and their success is our success.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-shield-alt fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Integrity</h3>
-                    <p>We believe in honesty, transparency, and ethical practices in all aspects of our business.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-hands-helping fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Collaboration</h3>
-                    <p>We foster a culture of teamwork and partnerships to create impactful solutions.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-leaf fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Sustainability</h3>
-                    <p>We aim to build solutions that are not only innovative but also sustainable and future-proof.</p>
+                <div class="col-lg-6">
+                    <img src="../assets/spark/sparkdevlogo.png" alt="SparkDev Studio" class="img-fluid hero-image">
                 </div>
             </div>
         </div>
-
-        <div class="goals-section">
-            <h2>Our Goals</h2>
-            <ul class="goals-list">
-                <li>Develop and launch proprietary SaaS products that address key market needs.</li>
-                <li>Build a strong reputation as a trusted provider of IT services in South Africa and beyond.</li>
-                <li>Expand our client base by offering affordable and scalable solutions for startups, SMEs, and large enterprises.</li>
-                <li>Foster a creative and innovative work environment that attracts top talent.</li>
-                <li>Leverage modern technologies to stay ahead in the ever-evolving tech landscape.</li>
-            </ul>
-        </div>
-
-        <div class="growth-plan">
-            <h2>Growth Plan</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Phase 1</h3>
-                    <p>Launch our first proprietary SaaS product within the next 18 months.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Phase 2</h3>
-                    <p>Expand our services to international markets within 3 years.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Phase 3</h3>
-                    <p>Build a strong team of developers, designers, and strategists to support growth.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="services-section">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-cloud fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>SaaS Development</h3>
-                    <p>Custom SaaS solutions for various industries with scalable platforms and cloud-based architectures.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-laptop-code fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Software Development</h3>
-                    <p>Custom software tailored to client needs, including mobile and desktop applications using React Native and Android.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-palette fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Web Development and Design</h3>
-                    <p>Stunning, responsive websites using WordPress, Angular, and React with user-friendly interfaces and modern design principles.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-wrench fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Website Maintenance</h3>
-                    <p>Regular updates, performance optimization, bug fixes, security audits, and backups to ensure reliability.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-globe fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Domain Registration and Hosting</h3>
-                    <p>Domain registration and hosting solutions integrated with Google Cloud and Firebase for seamless performance.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-server fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Cloud Solutions</h3>
-                    <p>Cloud hosting, database management, and storage using Firebase, Google Cloud, and MongoDB, with scalable infrastructure for startups and enterprises.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="tech-stack">
-            <h2>Technologies We Use</h2>
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <i class="fab fa-html5 fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Frontend</h3>
-                    <p>Angular, React, Ionic, HTML5, CSS</p>
-                </div>
-                <div class="tech-category">
-                    <i class="fas fa-database fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Backend</h3>
-                    <p>Firebase, Node.js, PostgreSQL, MongoDB</p>
-                </div>
-                <div class="tech-category">
-                    <i class="fas fa-mobile-alt fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Android, IONIC</p>
-                </div>
-                <div class="tech-category">
-                    <i class="fas fa-cloud fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Cloud Platforms</h3>
-                    <p>Google Cloud, Firebase, Konsole, Hostinger, Axxess, Register Domain SA</p>
-                </div>
-                <div class="tech-category">
-                    <i class="fas fa-code fa-2x mb-3" style="color: #007bff;"></i>
-                    <h3>Web Development</h3>
-                    <p>WordPress, HTML, CSS, JavaScript,WebFlow, Wix, Shopify</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="team-section">
-            <h2>Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="../assets/images/jabu.JPG" alt="Jabulani Gwala" class="profile-img">
-                    <h3>Jabulani Gwala</h3>
-                    <p class="role">Co-Founder</p>
-                    <a href="http://www.jabulanigwala.bio" target="_blank" class="profile-link">View Profile</a>
-                </div>
-
-                <div class="team-member">
-                    <img src="../assets/images/syno.jpeg" alt="Nkululeko Nkomo" class="profile-img">
-                    <h3>Nkululeko Nkomo</h3>
-                    <p class="role">Co-Founder</p>
-                    <a href="https://github.com/Syno021" target="_blank" class="profile-link">View Profile</a>
-                </div>
-
-                <div class="team-member">
-                    <img src="../assets/images/khulula.jpeg" alt="Khulula Mthembu" class="profile-img">
-                    <h3>Khulula Mthembu</h3>
-                    <p class="role">Co-Founder</p>
-                    <a href="https://khululablessing.vercel.app" target="_blank" class="profile-link">View Profile</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="unique-selling-proposition">
-            <h2>What Makes Us Different</h2>
-            <ul class="usp-list">
-                <li>Affordable, scalable solutions tailored to client needs</li>
-                <li>Expertise in modern technologies like Firebase, Google Cloud, and React Native</li>
-                <li>A customer-centric approach that prioritizes user experience and satisfaction</li>
-            </ul>
-        </div>
-
-        <div class="contact-cta">
-            <h2>Ready to Ignite Your Innovation?</h2>
-            <p>Contact us today to discuss how SparkDev Studio can help bring your ideas to life.</p>
-            <a href="../contact.html" class="cta-button">Get in Touch</a>
+    </section>
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="about-us">About Us</button>
+            <button class="tab-button" data-tab="our-values">Our Values</button>
+            <button class="tab-button" data-tab="our-team">Our Team</button>
         </div>
     </div>
+
+    <div class="content-container">
+        <!-- About Us Tab Content -->
+        <!-- Tab Content Structure for About Us -->
+<div class="tab-content active" id="about-us">
+    <h2 class="section-heading">Company Overview</h2>
+<div class="company-overview-card">
+    <p>SparkDev Studio is a South African startup specializing in innovative IT solutions. Our focus is on delivering high-quality services in SaaS development, software development, web development/design, and website maintenance. As a forward-thinking company, our goal is to create and offer our own SaaS products, making cutting-edge technology accessible and affordable for businesses of all sizes.</p>
+    <p>We leverage modern technologies such as WordPress, Firebase, Google Cloud, MongoDB, Angular, Ionic, React/React Native, PostgreSQL, and Android to deliver solutions tailored to our clients' needs.</p>
+</div>
+
+    <h2 class="section-heading">Technologies We Use</h2>
+    <div class="tech-categories">
+        <div class="tech-category">
+            <div class="tech-category-header">
+                <h3>Frontend</h3>
+            </div>
+            <div class="tech-category-body">
+                <div class="tech-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <p>Angular, React, Ionic, HTML5, CSS</p>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <div class="tech-category-header">
+                <h3>Backend</h3>
+            </div>
+            <div class="tech-category-body">
+                <div class="tech-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <p>Firebase, Node.js, PostgreSQL, MongoDB</p>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <div class="tech-category-header">
+                <h3>Mobile Development</h3>
+            </div>
+            <div class="tech-category-body">
+                <div class="tech-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p>React Native, Android, IONIC</p>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <div class="tech-category-header">
+                <h3>Cloud Platforms</h3>
+            </div>
+            <div class="tech-category-body">
+                <div class="tech-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <p>Google Cloud, Firebase, Konsole, Hostinger</p>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <div class="tech-category-header">
+                <h3>Web Development</h3>
+            </div>
+            <div class="tech-category-body">
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <p>WordPress, HTML, CSS, JavaScript, WebFlow</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Our Values Tab Content -->
+<div class="tab-content" id="our-values">
+    <h2 class="section-heading">Our Mission & Vision</h2>
+    <div class="mission-vision-grid">
+        <div class="mission-box">
+            <div class="mission-vision-header">
+                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+            </div>
+            <div class="mission-vision-body">
+                <p>To empower businesses and individuals by delivering innovative, scalable, and user-centric software solutions that simplify technology and drive growth.</p>
+            </div>
+        </div>
+
+        <div class="vision-box">
+            <div class="mission-vision-header">
+                <h3><i class="fas fa-eye"></i> Our Vision</h3>
+            </div>
+            <div class="mission-vision-body">
+                <p>To become a global leader in SaaS innovation, recognized for our creativity, reliability, and dedication to turning ideas into reality and securing future.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-heading">Core Values</h2>
+    <div class="values-grid">
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Innovation</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <p>We strive to bring fresh ideas to life, leveraging technology to solve real-world problems.</p>
+            </div>
+        </div>
+        
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Quality</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>We are committed to delivering exceptional services and products that exceed expectations.</p>
+            </div>
+        </div>
+        
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Customer-Centricity</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p>Our clients are at the heart of everything we do, and their success is our success.</p>
+            </div>
+        </div>
+        
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Integrity</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <p>We believe in honesty, transparency, and ethical practices in all aspects of our business.</p>
+            </div>
+        </div>
+        
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Collaboration</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <p>We foster a culture of teamwork and partnerships to create impactful solutions.</p>
+            </div>
+        </div>
+        
+        <div class="value-item">
+            <div class="value-header">
+                <h3>Sustainability</h3>
+            </div>
+            <div class="value-body">
+                <div class="value-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <p>We aim to build solutions that are not only innovative but also sustainable and future-proof.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Our Team Tab Content -->
+<div class="tab-content" id="our-team">
+    <h2 class="section-heading">Meet Our Team</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <div class="team-header">
+                <h3>Jabulani Gwala</h3>
+            </div>
+            <div class="team-body">
+                <div class="profile-img-container">
+                    <img src="../assets/images/jabu.JPG" alt="Jabulani Gwala" class="profile-img">
+                </div>
+                <p class="role">Co-Founder & CTO</p>
+                <div class="specialization-container">
+                    <span class="specialization-tag">Backend Development</span>
+                    <span class="specialization-tag">Cloud Solutions</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="portfolio-container">
+                    <a href="http://www.jabulanigwala.bio" target="_blank" class="portfolio-btn">
+                        <i class="fas fa-globe"></i> View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <div class="team-header">
+                <h3>Nkululeko Nkomo</h3>
+            </div>
+            <div class="team-body">
+                <div class="profile-img-container">
+                    <img src="../assets/images/syno.jpeg" alt="Nkululeko Nkomo" class="profile-img">
+                </div>
+                <p class="role">Co-Founder & Lead Developer</p>
+                <div class="specialization-container">
+                    <span class="specialization-tag">React/React Native</span>
+                    <span class="specialization-tag">MongoDB</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/Syno021" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="portfolio-container">
+                    <a href="https://github.com/Syno021" target="_blank" class="portfolio-btn">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <div class="team-header">
+                <h3>Khulula Mthembu</h3>
+            </div>
+            <div class="team-body">
+                <div class="profile-img-container">
+                    <img src="../assets/images/khulula.jpeg" alt="Khulula Mthembu" class="profile-img">
+                </div>
+                <p class="role">Co-Founder & Design Lead</p>
+                <div class="specialization-container">
+                    <span class="specialization-tag">UI/UX Design</span>
+                    <span class="specialization-tag">Web Development</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="portfolio-container">
+                    <a href="https://khululablessing.vercel.app" target="_blank" class="portfolio-btn">
+                        <i class="fas fa-globe"></i> View Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
    <!-- Footer will be loaded here -->
    <div id="footer-container"></div>
@@ -293,5 +398,27 @@
    
    <!-- Component Loader -->
    <script src="../js/components.js"></script> 
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+</script>
 </body>
 </html>
