@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/components.css">
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init('prSp78quzRbjZbSxt');
+        })();
+    </script>
 </head>
 <body>
     <!-- Navbar will be loaded here -->
@@ -62,20 +70,22 @@
             <div class="col-lg-6">
                 <div class="contact-form-wrapper">
                     <h2 class="mb-4 fw-bold">Send Us a Message</h2>
+                    <!-- Alert for form submission status -->
+                    <div id="alertMessage" class="alert d-none" role="alert"></div>
                     <form id="contactForm">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject" required>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
                         </div>
                         <div class="mb-4">
-                            <textarea class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
                     </form>
@@ -110,5 +120,8 @@
      
      <!-- Component Loader -->
      <script src="../js/components.js"></script>
+
+     <!-- Contact Form Script -->
+     <script src="../js/contact.js"></script>
 </body>
 </html>
